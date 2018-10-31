@@ -11,7 +11,7 @@ add_custom_command(OUTPUT alwaysRunGenerateCommand # note output never actually 
 	COMMENT "generating meta build info definitions header using python script" 
 	WORKING_DIRECTORY ${PROJECT_BINARY_DIR}
 	DEPENDS ${CMAKE_CURRENT_LIST_DIR}/build_meta_info.py
-	COMMAND python ${CMAKE_CURRENT_LIST_DIR}/build_meta_info.py --target_generation_dir ${PROJECT_BINARY_DIR}/BuildMetaInfo/generated --toolkit_libs '${OPCUA_TOOLKIT_LIBS}'
+	COMMAND python ${CMAKE_CURRENT_LIST_DIR}/build_meta_info.py --target_generation_dir ${PROJECT_BINARY_DIR}/BuildMetaInfo/generated --toolkit_libs "${OPCUA_TOOLKIT_LIBS}"
 )
 
 file(GLOB BUILD_META_INFO_SRCS src/*.cpp include/*.h)
